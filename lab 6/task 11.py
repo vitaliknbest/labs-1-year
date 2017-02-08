@@ -38,3 +38,15 @@ if d in range(1,32) and m in range(1,13) and y in range(1901,2020):
         print('Invalide date!')
 else:
     print('введіть коректні дані')
+while True:
+    do = input('Бажаэте продовжити?(y / n)')
+    while True:
+        if do == 'y' or do == 'n':
+            break
+        else:
+            print('введіть будь-ласка y або n')
+    if do == 'y':
+        continue
+    else:
+        break
+        
