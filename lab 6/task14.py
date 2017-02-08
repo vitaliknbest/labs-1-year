@@ -31,11 +31,14 @@ class Animals(Enum):
     chicken = 9
     dog = 10
     pig = 11
-date = int(input('Введіть будь-ласка  рік'))
-date -= 4
-date %= 60
-counter = 0
-while date >= 12:
-    date -=12
-    counter += 1
-print(Year(counter).name,Animals(date).name)
+date = int(input('Введіть будь-ласка  рік \n'))
+if date > 0:
+    date -= 4
+    date %= 60
+    counter = 0
+    while date >= 12:
+        date -=12
+        counter += 1
+    print(Year(counter).name,Animals(date).name)
+else :
+    print("введіть будьласка рік нашої ери")
