@@ -11,18 +11,18 @@ class measure(Enum):
     centimetre = 5
     x = float(input('leght:'))
     p = [input('measure:')]
-    if p == measure.decimetre:
+    if p == measure(1):
         x *= 0.1
-    elif p == 2:
+    elif p == measure(2):
         x *= 1000
-    elif p == 3:
+    elif p == measure(3):
         x *= 1
-    elif p == 4:
+    elif p == measure(4):
         x *= 0.001
-    elif p == 5:
+    elif p == measure(5):
         x *= 0.01
     else:
         print("введіть коректні дані")
-
+print(x)
     
     
