@@ -7,8 +7,6 @@ while True:
         for i in s:
             if i.isdigit() and s.count(i) > 1:            
                 se.add(i)
-            else:
-                raise ValueError
         print(len(se))
     except ValueError:
         print('Введіть числа через кому')
