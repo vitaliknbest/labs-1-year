@@ -12,7 +12,7 @@ stmt = '''while (j < len(pat)) and (i < (len(text) - len(pat))):
 t = timeit.timeit(stmt, setup, number= 1000)
 print('час за 1000 повторень алгоритму', t,\
       '\nкількість зрівнень у найгіршому разі = len(text) + len(pat)')
-#if j == len(pat):
-#    print('підстрока знайдена в позиції', i)
-#else:
-#    print('строка не найдена')
+'''if j == len(pat):
+    print('підстрока знайдена в позиції', i)
+else:
+    print('строка не найдена')'''

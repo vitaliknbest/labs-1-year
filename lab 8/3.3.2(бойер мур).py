@@ -19,10 +19,11 @@ while n - i >= m and pos == -1:
             break
         j = -1
     i += d[ord(text[i + m - 1])]'''
-#if pos != -1:
-#    print('підстрока найдена в похиції', pos)
-#else:
-#    print('елемант не знайдений')
+'''
+if pos != -1:
+    print('підстрока найдена в похиції', pos)
+else:
+    print('елемант не знайдений')'''
 print(timeit.timeit(stmt,setup,number= 1000))
 print('в найгіршому випадку потребує m + n зрівнень')
 
