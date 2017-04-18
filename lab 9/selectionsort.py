@@ -1,3 +1,4 @@
+
 import random
 n = int(input('введіть скільки елементів в списку'))
 mass = [0] * n
