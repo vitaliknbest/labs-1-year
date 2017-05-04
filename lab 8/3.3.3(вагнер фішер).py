@@ -17,5 +17,7 @@ for i in range(1, m + 1):
             d[i][j] = d[i - 1][j - 1]
         else:
             d[i][j] = 1 + min(d[i - 1][j], d[i - 1][j - 1], d[i][j - 1])
+print(d[i][j])            
 '''
-print('час за виконання 1000 повторень', timeit(stmt, setup, number=1000))
+
+print('час за виконання 1000 повторень', timeit(stmt, setup, number=100))
