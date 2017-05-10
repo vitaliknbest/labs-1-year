@@ -24,10 +24,10 @@ while True:
     try:
         n = int(input('n = '))
         m = int(input('m = '))
-        print('Значение функции(реурсивно): ', f(m, n))
-        print('ітераційно ', ackermann(m, n))
-    except ValueError:
-        print("Введіть правельне значення")
+        print('Значення функції(рекурсивно): ', f(m, n))
+        print('(ітераційно) ', ackermann(m, n))
+    except (ValueError, MemoryError, RecursionError):
+        print("Введіть правельне значення/ занадто велике значення ")
     while True:
         do = input("Бажаєте продовжити ?(y /n )\n")
         if do == "y" or do == "n":
