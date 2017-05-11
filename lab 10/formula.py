@@ -2,6 +2,12 @@ sign = "+-* "
 digit = '0987654321'
 
 def itera(text):
+    '''
+    функція перевіряє чи даний текст є формулою ітераційно
+
+    :param text: текст який треба перевірити
+    :return: True або False
+    '''
     text = text.split('=')
     for i in text:
         if i.isdigit():
@@ -15,6 +21,11 @@ def itera(text):
             return True
 
 def formula(text):
+    '''
+    функція перевіряє чи даний текст є формулою рекурсивно
+    :param text: текст який треба перевірити
+    :return: True або False
+    '''
     text = text.split('=')
     for i in text:
         if i == '':

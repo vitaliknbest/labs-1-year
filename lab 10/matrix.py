@@ -3,6 +3,12 @@ import random
 
 
 def summa(matrix):
+    '''
+    визначає суму всіх елементів матриці ітераційно
+
+    :param matrix: задана матриця
+    :return: суму всіх елементів
+    '''
     sum = 0
     for i in range(m):
         for j in range(m):
@@ -11,6 +17,12 @@ def summa(matrix):
 
 
 def summa_rec(matrix):
+    """
+    визначає суму всіх елементів матриці рекурсивно
+
+    :param matrix: задана матриця
+    :return: суму всіх елементів
+    """
     if len(matrix) == 1:
         return matrix[0]
     else:
@@ -19,6 +31,12 @@ def summa_rec(matrix):
 
 
 def mult(matrix):
+    """
+    визначає добуток всіх елементів матриці ітераційно
+
+    :param matrix: задана матриця
+    :return: добуток всіх елементів
+    """
     n = 1
     for i in matrix:
         for j in i:
@@ -27,6 +45,12 @@ def mult(matrix):
 
 
 def mult_rec(matrix):
+    '''
+    визначає добуток всіх елементів матриці рекурсивно
+
+    :param matrix: задана матриця
+    :return: длюуьлк всіх елементів
+    '''
     if len(matrix) == 1:
         return matrix[0]
     else:
@@ -36,20 +60,34 @@ def mult_rec(matrix):
 
 
 def seach(matrix, a):
+    '''
+    пошук елементу в матриці ітераційно
+
+    :param matrix: матриця в якій треба знайти
+    :param a: число яке треба знайти
+    :return: положення числа або None
+    '''
     for i in range(len(matrix)):
         for j in range(len(matrix)):
             if matrix[i][j] == a:
                 return i, j
 
-
+c = 0
+d = 0
 def seach_rec(i, j, a, matrix):
+    '''
+    пошук елемента в матриці рекурсивно
 
+    :param i: стовбець
+    :param j: колонка
+    :param a: елемент який потрібно знайти
+    :param matrix: задана матриця в якій треба знайти
+    :return:  положення обєкта або None
+    '''
     if matrix[i][j] == a:
-
-        return i, j
+        global c,d
+        c,d = i, j
     else:
-        global c1, c2
-        c1, c2 = i, j
         if j + 1 < len(matrix[0]):
             seach_rec(i, j + 1, a, matrix)
         if i + 1 < len(matrix[1]):
@@ -61,9 +99,6 @@ while True:
         m = int(input('введіть розмірність квадратної матриці'))
         choice = int(input("згенерувати матрицю (2) чи хочете ввести вручну(1)"))
         a = int(input('введіть який елемент шукати'))
-        c1 = 0
-        c2 = 0
-
         if choice == 1:
             matrix = np.zeros((m, m), np.int)
             for i in range(m):
@@ -77,8 +112,9 @@ while True:
         print(matrix)
         print('сума елементів матриці ітераційно: {} рекурсивно : {}'.format(summa(matrix), summa_rec(matrix)))
         print('добуток елементів матриці ітераційно: {} рекурсивно : {}'.format(mult(matrix), mult_rec(matrix)))
-        print('шуканий елемент матриці ітераційно: {} рекурсивно : {}'.format(seach(matrix, a), seach_rec(i, j, a, matrix)))
-    except (ValueError, MemoryError):
+        seach_rec(0, 0, a, matrix)
+        print('шуканий елемент матриці ітераційно: {} рекурсивно : {}'.format(seach(matrix, a), (c,d)))
+    except (ValueError, MemoryError, RuntimeWarning):
         print("Введіть правельне значення/ надто велике число")
     while True:
         do = input("Бажаєте продовжити ?(y /n )\n")
